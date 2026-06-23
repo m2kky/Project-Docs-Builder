@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Project Docs Builder is a portable Agent Skill that turns a brief into production-grade product, requirements, architecture, API, UX, operations, and AI-agent documentation.">
+    <title>Project Docs Builder</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Project Docs Builder home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Project Docs Builder</span>
+      </a>
+      <nav aria-label="Page">
+        <a href="#agents">Agents</a>
+        <a href="#output">Output</a>
+        <a href="#install">Install</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <canvas id="spec-canvas" aria-hidden="true"></canvas>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="artifact-map">
+            <span>brief</span>
+            <span>PRD</span>
+            <span>FRS</span>
+            <span>ERD</span>
+            <span>OpenAPI</span>
+            <span>Runbooks</span>
+          </div>
+          <pre><code>docs/
+  01-product/
+  02-requirements/
+  03-architecture/
+    diagrams/
+    openapi/
+  04-ux-and-flows/
+  05-project-plan/
+  06-engineering/
+ai/
+logs/</code></pre>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Portable Agent Skill + npm CLI</p>
+          <h1 id="hero-title">Project Docs Builder</h1>
+          <p class="lede">Turn a short brief into a complete documentation system that can drive product decisions, implementation, testing, operations, and AI-agent work.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#install">Install</a>
+            <a class="button secondary" href="https://github.com/m2kky/Project-Docs-Builder">GitHub</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="proof" aria-labelledby="proof-title">
+        <div class="section-kicker">What changes</div>
+        <h2 id="proof-title">It does not stop at PRD.</h2>
+        <div class="proof-grid">
+          <article>
+            <strong>Product to delivery</strong>
+            <p>Vision, scope, personas, journeys, metrics, roadmap, backlog, milestones, and release planning stay connected.</p>
+          </article>
+          <article>
+            <strong>Architecture with contracts</strong>
+            <p>C4, data model, ERD, OpenAPI, integrations, auth, webhooks, queues, caching, migrations, and failure handling.</p>
+          </article>
+          <article>
+            <strong>Operations included</strong>
+            <p>Testing, deployment, monitoring, backup, incident response, privacy drafts, onboarding, review, and agent runbooks.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="output" id="output" aria-labelledby="output-title">
+        <div>
+          <div class="section-kicker">Output depth</div>
+          <h2 id="output-title">Lite, Full, or Enterprise.</h2>
+          <p>Use Lite for small builds, Full for production-ready docs, and Enterprise when governance, compliance, support, or audit trails matter.</p>
+        </div>
+        <div class="levels" aria-label="Documentation levels">
+          <div>
+            <span>Lite</span>
+            <strong>Core docs</strong>
+          </div>
+          <div>
+            <span>Full</span>
+            <strong>Default pack</strong>
+          </div>
+          <div>
+            <span>Enterprise</span>
+            <strong>Governance layer</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="agents" id="agents" aria-labelledby="agents-title">
+        <div class="section-kicker">Works across agents</div>
+        <h2 id="agents-title">One skill, many coding tools.</h2>
+        <ul class="agent-list">
+          <li>OpenAI Codex</li>
+          <li>Claude Code</li>
+          <li>Google Antigravity</li>
+          <li>VS Code / GitHub Copilot</li>
+          <li>Amazon Q Developer</li>
+          <li>Kiro</li>
+          <li>Cursor</li>
+          <li>Gemini CLI</li>
+          <li>Windsurf / Devin Cascade</li>
+          <li>Cline</li>
+          <li>Roo Code</li>
+          <li>Continue</li>
+          <li>OpenCode</li>
+          <li>Aider</li>
+        </ul>
+      </section>
+
+      <section class="install" id="install" aria-labelledby="install-title">
+        <div>
+          <div class="section-kicker">Install</div>
+          <h2 id="install-title">Use npm or clone the skill.</h2>
+          <p>The CLI installs native skills where supported and writes rule adapters for tools that read project instructions.</p>
+        </div>
+        <div class="commands" aria-label="Install commands">
+          <button data-copy="npx project-docs-builder install codex">npx project-docs-builder install codex</button>
+          <button data-copy="npx project-docs-builder install claude --scope project">npx project-docs-builder install claude --scope project</button>
+          <button data-copy="npx project-docs-builder install amazonq --project .">npx project-docs-builder install amazonq --project .</button>
+          <button data-copy="npx project-docs-builder scaffold . --level full">npx project-docs-builder scaffold . --level full</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>MIT Licensed</span>
+      <a href="https://github.com/m2kky/Project-Docs-Builder/releases">Releases</a>
+      <a href="https://www.npmjs.com/package/project-docs-builder">npm</a>
+    </footer>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

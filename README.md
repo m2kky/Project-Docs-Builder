@@ -34,6 +34,38 @@ scripts/
 
 ## Install
 
+### npm CLI
+
+Install a native skill or adapter with npm:
+
+```bash
+npx project-docs-builder install codex
+npx project-docs-builder install claude --scope project
+npx project-docs-builder install antigravity
+npx project-docs-builder install amazonq --project .
+```
+
+Create a docs-pack skeleton:
+
+```bash
+npx project-docs-builder scaffold . --level full
+```
+
+Useful commands:
+
+```bash
+npx project-docs-builder paths
+npx project-docs-builder adapters
+```
+
+Note: npm publishing requires an authenticated npm account. Until the first npm publish is completed, install from GitHub with:
+
+```bash
+npx github:m2kky/Project-Docs-Builder install codex
+```
+
+### Manual install
+
 This repository is already a complete `SKILL.md` skill folder. For tools that support Agent Skills natively, clone the repository directly into that tool's skills directory.
 
 ### Native Agent Skills
@@ -159,6 +191,7 @@ The script only writes safe placeholders. The agent should fill the content usin
 - `SKILL.md` is the canonical source for this package.
 - `references/` contains the detailed templates and quality gates used through progressive disclosure.
 - `scripts/scaffold_docs_pack.py` is optional and creates only safe placeholder files.
+- `bin/project-docs-builder.js` is the npm CLI installer and scaffold wrapper.
 - Rule/instruction adapters are fallback wrappers for agents that do not support native Agent Skills yet.
 
 Official references checked on 2026-06-23:
@@ -173,7 +206,7 @@ Official references checked on 2026-06-23:
 
 ## Version
 
-Current version: `0.1.1`
+Current version: `0.2.0`
 
 ## License
 

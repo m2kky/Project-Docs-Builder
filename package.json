@@ -1,0 +1,49 @@
+{
+  "name": "project-docs-builder",
+  "version": "0.2.0",
+  "description": "Portable Agent Skill and CLI for building complete project documentation packs from a brief.",
+  "license": "MIT",
+  "type": "commonjs",
+  "bin": {
+    "project-docs-builder": "bin/project-docs-builder.js"
+  },
+  "files": [
+    "SKILL.md",
+    "agents/",
+    "references/",
+    "scripts/",
+    "bin/",
+    "README.md",
+    "LICENSE",
+    "VERSION"
+  ],
+  "scripts": {
+    "check": "node --check bin/project-docs-builder.js",
+    "pack:dry": "npm pack --dry-run"
+  },
+  "keywords": [
+    "agent-skills",
+    "skill-md",
+    "agents-md",
+    "codex",
+    "claude-code",
+    "antigravity",
+    "copilot",
+    "amazon-q",
+    "documentation",
+    "openapi",
+    "requirements",
+    "architecture"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m2kky/Project-Docs-Builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/m2kky/Project-Docs-Builder/issues"
+  },
+  "homepage": "https://m2kky.github.io/Project-Docs-Builder/",
+  "engines": {
+    "node": ">=18"
+  }
+}

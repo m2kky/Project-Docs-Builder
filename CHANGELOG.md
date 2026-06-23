@@ -2,6 +2,16 @@
 
 All notable changes to Project Docs Builder are documented in this file.
 
+## [0.2.0] - 2026-06-23
+
+### Added
+
+- npm package metadata for `project-docs-builder`.
+- Dependency-free Node CLI at `bin/project-docs-builder.js`.
+- CLI install targets for native Agent Skills and rule/instruction adapters.
+- CLI scaffold wrapper for Lite, Full, and Enterprise docs-pack skeletons.
+- Static landing page under `docs/` for GitHub Pages.
+
 ## [0.1.1] - 2026-06-23
 
 ### Changed
