@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Docs Builder"
+  short_description: "Build production-grade project docs"
+  default_prompt: "Use $project-docs-builder to create a complete documentation pack from my project brief."
