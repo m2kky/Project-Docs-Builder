@@ -2,6 +2,14 @@
 
 All notable changes to Project Docs Builder are documented in this file.
 
+## [0.2.1] - 2026-06-23
+
+### Changed
+
+- Added package author credit for muhammed mekky.
+- Added a prominent README link to the GitHub Pages landing page.
+- Updated npm package metadata for the first registry publish.
+
 ## [0.2.0] - 2026-06-23
 
 ### Added

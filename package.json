@@ -1,7 +1,8 @@
 {
   "name": "project-docs-builder",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Portable Agent Skill and CLI for building complete project documentation packs from a brief.",
+  "author": "muhammed mekky",
   "license": "MIT",
   "type": "commonjs",
   "bin": {

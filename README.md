@@ -4,6 +4,14 @@ Production-grade Agent Skill for creating, reviewing, updating, and auditing ful
 
 It is designed for documentation-first software projects where the docs must drive product decisions, requirements, architecture, API contracts, data modeling, UX flows, delivery planning, operations, and AI-assisted implementation.
 
+Built by muhammed mekky.
+
+## Landing Page
+
+Visit the landing page for the visual overview, supported agents, and install commands:
+
+[m2kky.github.io/Project-Docs-Builder](https://m2kky.github.io/Project-Docs-Builder/)
+
 ## What It Builds
 
 `project-docs-builder` can generate or maintain documentation systems with:
@@ -36,7 +44,7 @@ scripts/
 
 ### npm CLI
 
-Install a native skill or adapter with npm:
+Install a native skill or adapter with npm after the registry publish is available:
 
 ```bash
 npx project-docs-builder install codex
@@ -58,7 +66,7 @@ npx project-docs-builder paths
 npx project-docs-builder adapters
 ```
 
-Note: npm publishing requires an authenticated npm account. Until the first npm publish is completed, install from GitHub with:
+If the npm package is not available yet, use the GitHub fallback:
 
 ```bash
 npx github:m2kky/Project-Docs-Builder install codex
@@ -206,7 +214,7 @@ Official references checked on 2026-06-23:
 
 ## Version
 
-Current version: `0.2.0`
+Current version: `0.2.1`
 
 ## License
 
