@@ -1,6 +1,6 @@
 # Project Docs Builder
 
-Production-grade Codex skill for creating, reviewing, updating, and auditing full project documentation packs from a short brief or partial docs.
+Production-grade Agent Skill for creating, reviewing, updating, and auditing full project documentation packs from a short brief or partial docs.
 
 It is designed for documentation-first software projects where the docs must drive product decisions, requirements, architecture, API contracts, data modeling, UX flows, delivery planning, operations, and AI-assisted implementation.
 
@@ -34,19 +34,85 @@ scripts/
 
 ## Install
 
-Clone this repository into your Codex skills directory:
+This repository is already a complete `SKILL.md` skill folder. For tools that support Agent Skills natively, clone the repository directly into that tool's skills directory.
+
+### Native Agent Skills
+
+| Tool | User/global install | Project install | Invoke |
+| --- | --- | --- | --- |
+| OpenAI Codex | `~/.agents/skills/project-docs-builder` | `.agents/skills/project-docs-builder` | `$project-docs-builder` |
+| Claude Code | `~/.claude/skills/project-docs-builder` | `.claude/skills/project-docs-builder` | `/project-docs-builder` |
+| Google Antigravity | `~/.gemini/config/skills/project-docs-builder` | `.agents/skills/project-docs-builder` | Ask Antigravity to use Project Docs Builder |
+| VS Code / GitHub Copilot Agent Skills | N/A | `.github/skills/project-docs-builder` | `/project-docs-builder` |
+
+macOS/Linux examples:
 
 ```bash
-git clone https://github.com/m2kky/Project-Docs-Builder.git ~/.codex/skills/project-docs-builder
+git clone https://github.com/m2kky/Project-Docs-Builder.git ~/.agents/skills/project-docs-builder
+git clone https://github.com/m2kky/Project-Docs-Builder.git ~/.claude/skills/project-docs-builder
+git clone https://github.com/m2kky/Project-Docs-Builder.git ~/.gemini/config/skills/project-docs-builder
 ```
 
-On Windows:
+Windows PowerShell examples:
+
+```powershell
+git clone https://github.com/m2kky/Project-Docs-Builder.git "$env:USERPROFILE\.agents\skills\project-docs-builder"
+git clone https://github.com/m2kky/Project-Docs-Builder.git "$env:USERPROFILE\.claude\skills\project-docs-builder"
+git clone https://github.com/m2kky/Project-Docs-Builder.git "$env:USERPROFILE\.gemini\config\skills\project-docs-builder"
+```
+
+Project-scoped examples:
+
+```bash
+git clone https://github.com/m2kky/Project-Docs-Builder.git .agents/skills/project-docs-builder
+git clone https://github.com/m2kky/Project-Docs-Builder.git .claude/skills/project-docs-builder
+git clone https://github.com/m2kky/Project-Docs-Builder.git .github/skills/project-docs-builder
+```
+
+Codex installs that still scan the older `~/.codex/skills` location can also use:
 
 ```powershell
 git clone https://github.com/m2kky/Project-Docs-Builder.git $env:USERPROFILE\.codex\skills\project-docs-builder
 ```
 
-Restart Codex after installing if the skill does not appear immediately.
+Restart the agent/IDE if the skill does not appear immediately.
+
+### Rule or Instruction Adapters
+
+Some agents do not load `SKILL.md` folders directly, but they can still use Project Docs Builder through rules or instruction files. Clone the repo somewhere stable, then add a small adapter rule that tells the agent to read `SKILL.md` and the referenced files when documentation-pack work is requested.
+
+Recommended project-local clone:
+
+```bash
+git clone https://github.com/m2kky/Project-Docs-Builder.git tools/project-docs-builder
+```
+
+Adapter text:
+
+```markdown
+# Project Docs Builder
+
+When asked to create, review, update, or audit project documentation, use the Project Docs Builder workflow.
+
+Read `tools/project-docs-builder/SKILL.md` first. Load only the referenced files under `tools/project-docs-builder/references/` that match the task. Create implementation-grade docs, not summaries. Keep product, requirements, architecture, data, API, UX, testing, deployment, operations, and AI-agent docs consistent with each other.
+```
+
+Common adapter locations:
+
+| Tool | Put the adapter in |
+| --- | --- |
+| Amazon Q Developer | `.amazonq/rules/project-docs-builder.md` |
+| Kiro CLI / Kiro IDE | `.kiro/steering/project-docs-builder.md` |
+| Cursor | `AGENTS.md` or `.cursor/rules/project-docs-builder.mdc` |
+| GitHub Copilot repository instructions | `.github/copilot-instructions.md`, `.github/instructions/project-docs-builder.instructions.md`, or `AGENTS.md` |
+| Gemini CLI | `GEMINI.md`, or configure Gemini CLI to use `AGENTS.md` |
+| Windsurf / Devin Cascade | `AGENTS.md`, `.devin/rules/project-docs-builder.md`, or legacy `.windsurf/rules/project-docs-builder.md` |
+| Cline | `.clinerules/project-docs-builder.md` or `AGENTS.md` |
+| Roo Code | `.roo/rules/project-docs-builder.md` |
+| Continue | `.continue/rules/project-docs-builder.md` |
+| OpenCode, Aider, Zed, Junie, and other AGENTS.md-aware agents | `AGENTS.md` |
+
+For rule-only tools that do not reliably follow file references, copy the core workflow from `SKILL.md` into the adapter file instead of referencing it indirectly.
 
 ## Usage
 
@@ -86,11 +152,28 @@ Supported levels:
 - `full`
 - `enterprise`
 
-The script only writes safe placeholders. The Codex agent should fill the content using the project brief and the skill references.
+The script only writes safe placeholders. The agent should fill the content using the project brief and the skill references.
+
+## Compatibility Notes
+
+- `SKILL.md` is the canonical source for this package.
+- `references/` contains the detailed templates and quality gates used through progressive disclosure.
+- `scripts/scaffold_docs_pack.py` is optional and creates only safe placeholder files.
+- Rule/instruction adapters are fallback wrappers for agents that do not support native Agent Skills yet.
+
+Official references checked on 2026-06-23:
+
+- [OpenAI Codex Agent Skills](https://developers.openai.com/codex/skills)
+- [Claude Code skills](https://code.claude.com/docs/en/skills)
+- [Google Antigravity skills](https://antigravity.google/docs/skills)
+- [VS Code Agent Skills](https://code.visualstudio.com/docs/agent-customization/agent-skills)
+- [AGENTS.md](https://agents.md/)
+- [Amazon Q Developer project rules](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/context-project-rules.html)
+- [GitHub Copilot repository custom instructions](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions)
 
 ## Version
 
-Current version: `0.1.0`
+Current version: `0.1.1`
 
 ## License
 

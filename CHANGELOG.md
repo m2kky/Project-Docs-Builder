@@ -2,11 +2,20 @@
 
 All notable changes to Project Docs Builder are documented in this file.
 
+## [0.1.1] - 2026-06-23
+
+### Changed
+
+- Reworded the package as a portable Agent Skill instead of a Codex-only skill.
+- Added native install paths for Codex, Claude Code, Google Antigravity, and VS Code / GitHub Copilot Agent Skills.
+- Added rule/instruction adapter guidance for Amazon Q Developer, Kiro, Cursor, GitHub Copilot, Gemini CLI, Windsurf / Devin Cascade, Cline, Roo Code, Continue, OpenCode, Aider, Zed, Junie, and other `AGENTS.md`-aware agents.
+- Added official compatibility references checked on 2026-06-23.
+
 ## [0.1.0] - 2026-06-23
 
 ### Added
 
-- Initial `project-docs-builder` Codex skill.
+- Initial `project-docs-builder` Agent Skill for Codex.
 - Production-grade docs pack workflow for build, review, update, and audit modes.
 - Lite, Full, and Enterprise documentation pack structures.
 - Detailed templates for product, requirements, architecture, UX, project plan, engineering, and AI docs.
